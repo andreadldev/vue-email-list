@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="app">
+        <button @click="generateMail">Genera mail</button>
         <ul v-if="mailList.length == 10">
             <li v-for="(mail, index) in mailList">
                 {{mail}}
