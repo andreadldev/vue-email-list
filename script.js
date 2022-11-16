@@ -5,6 +5,7 @@ createApp({
         return {
             mailList: [],
             mailNumber: 10,
+            check : true
         }
     },
     methods: {
@@ -17,6 +18,9 @@ createApp({
                     this.mailList.push(mail);
                 })
             }
+        },
+        changeCheckboxValue() {
+            this.check = !this.check;
         }
     }
 }).mount('#app')

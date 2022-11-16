@@ -14,9 +14,18 @@
             <span>Quantità mail da generare: </span>
             <input type="number" v-model="mailNumber">
         </div>
+        <div>
+            <span>Genera mail tutte insieme </span>
+            <input type="checkbox" checked id="checkBox" @click="changeCheckboxValue">
+        </div>
         
         <button @click="generateMail">Genera mail</button>
-        <ul v-if="mailList.length === mailNumber">
+        <ul v-if="mailList.length === mailNumber && check == true">
+            <li v-for="(mail, index) in mailList">
+                {{mail}}
+            </li>
+        </ul>
+        <ul v-else-if="check == false">
             <li v-for="(mail, index) in mailList">
                 {{mail}}
             </li>
