@@ -10,8 +10,13 @@
 </head>
 <body>
     <div id="app">
+        <div>
+            <span>Quantità mail da generare: </span>
+            <input type="number" v-model="mailNumber">
+        </div>
+        
         <button @click="generateMail">Genera mail</button>
-        <ul v-if="mailList.length == 10">
+        <ul v-if="mailList.length === mailNumber">
             <li v-for="(mail, index) in mailList">
                 {{mail}}
             </li>
